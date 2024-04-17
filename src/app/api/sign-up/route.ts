@@ -32,7 +32,7 @@ export async function POST(req: Request) {
             verifyCodeExpiry.setHours(verifyCodeExpiry.getHours() + 1)
             const newUser = await UserModel.create({ uName, email, password: hashedPassword, verifyCode, verifyCodeExpiry, msgs: [] })
         }
-        const emailRes = await sendVerificationMail('webdevformailing@gmail.com', uName, verifyCode)
+        const emailRes = await sendVerificationMail('', uName, verifyCode)
         if (!emailRes.success) return Response.json({
             success: false,
             msg: emailRes.msg
