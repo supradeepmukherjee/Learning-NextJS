@@ -1,4 +1,4 @@
-import mongoose, { Schema, Document, models, Model, model } from "mongoose"
+import { Schema, Document, models, Model, model } from "mongoose"
 
 export interface Message extends Document {
     content: string
